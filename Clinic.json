@@ -1,0 +1,26 @@
+[
+    {
+        "patientName": "Jomy",
+        "patientId": "485125",
+        "address": "Dighave",
+        "city": "Pune",
+        "state": "Maharastra",
+        "weight": "65",
+        "phoneNumber": "91 8523696542",
+        "email": "jomy012@gmail.com",
+        "gender": "Male",
+        "bloodGroup": "A+"
+    },
+    {
+        "patientName": "Sandy",
+        "patientId": "456258",
+        "address": "Barud",
+        "city": "Jamner",
+        "state": "Maharastra",
+        "weight": "62",
+        "phoneNumber": "91 8523694562",
+        "email": "sandy45@gmail.com",
+        "gender": "Male",
+        "bloodGroup": "A-"
+    }
+]
