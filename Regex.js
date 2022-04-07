@@ -1,3 +1,4 @@
+// import PatientInformation Class File is in Regex File
 const PatientInformation = require("./PatientInformation");
 
 //  class RegexPattern {

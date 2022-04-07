@@ -13,9 +13,6 @@ class PatientInformation {
     gender;
     bloodGroup;
 
-
-
-
     // patientName, patientId, address, city, state, weight, phoneNumber, email, gender, bloodGroup
     // constructor
     constructor(patientName, patientId, address, city, state, weight, phoneNumber, email, gender, bloodGroup) {
@@ -114,7 +111,6 @@ class PatientInformation {
         this._bloodGroup = bloodGroup;
     }
 
-
     // tostring
     toString() {
         return "patientName=" + this.patientName
@@ -130,5 +126,5 @@ class PatientInformation {
     }
 }
 
-//exporting the class file to another class
+//exporting the PatientInformation class file to ClinicData class file
 module.exports = PatientInformation;

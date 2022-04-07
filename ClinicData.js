@@ -1,4 +1,4 @@
-// importing PatientInformation class file is in ClinicData class file
+// importing PatientInformation And Regex class file is in ClinicData class file
 const PatientInformation = require("./PatientInformation");
 const pattern = require("./Regex");
 const read = require('readline-sync');
@@ -19,7 +19,6 @@ function writeFileData(myObject) {
     return fs.writeFileSync('./Clinic.json', writeData);
 }
 
-
 class ClinicData {
 
     // insert Patient Details is in ClinicData Book
@@ -30,16 +29,12 @@ class ClinicData {
 
         // Ability to add user-defined values to the ClinicData
         // patientData.patientName = pattern.checkRegexForName(read.question("Enter First Name: "));
-
-
         // if(((patientData.patientName=(pattern.checkRegexForName(read.question("Enter First Name: ")) != true)))){
         //      pattern.checkRegexForName(read.question("Enter First Name: "));
-
         // }
         // else{
         //     console.log("Pleaze Enter First Name Again")
         //     patientData.patientName = pattern.checkRegexForName(read.question("Enter First Name: "));
-
         // }
         // Ability to add user-defined values to the ClinicData Book
         patientData.patientName = read.question("Enter Patient Name: ");

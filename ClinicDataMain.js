@@ -1,3 +1,4 @@
+// import ClinicData Class File is in ClinicDataMain Class File
 const ClinicData = require("./ClinicData");
 const read = require('readline-sync');
 
@@ -16,7 +17,6 @@ while (flag) {
 
     switch (option) {
         case 1:
-
             clinicData.insertPatientDetails();
             break;
         case 2:
