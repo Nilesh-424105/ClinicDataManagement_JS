@@ -1,26 +1,26 @@
 [
     {
-        "patientName": "Jomy",
+        "patientName": "Romio",
         "patientId": "485125",
         "address": "Dighave",
-        "city": "Pune",
-        "state": "Maharastra",
+        "city": "Gurgaon",
+        "state": "Delhi",
         "weight": "65",
         "phoneNumber": "91 8523696542",
         "email": "jomy012@gmail.com",
         "gender": "Male",
-        "bloodGroup": "A+"
+        "bloodGroup": "B+"
     },
     {
-        "patientName": "Sandy",
-        "patientId": "456258",
-        "address": "Barud",
-        "city": "Jamner",
+        "patientName": "Amit",
+        "patientId": "424546",
+        "address": "Kalyan",
+        "city": "NaviMumbai",
         "state": "Maharastra",
-        "weight": "62",
-        "phoneNumber": "91 8523694562",
-        "email": "sandy45@gmail.com",
+        "weight": "55",
+        "phoneNumber": "91 8855226655",
+        "email": "sonyx12@gmail.com",
         "gender": "Male",
-        "bloodGroup": "A-"
+        "bloodGroup": "o-"
     }
 ]

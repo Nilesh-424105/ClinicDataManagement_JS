@@ -5,28 +5,33 @@ let clinicData = new ClinicData();
 flag = true;
 
 while (flag) {
+    console.log("welcome to ClinicDataManagement Program")
     console.log("1. Insert Patient Data in Clinic Book");
     console.log("2. Display the list of Patient");
     console.log("3. Edit Patient Data in Clinic Book");
     console.log("4. Delete Patient Data in Clinic Book");
-    console.log("5. to exit");
+    console.log("5. Search Patient Data in Clinic Book");
+    console.log("6. to exit");
     let option = parseInt(read.question("Enter your choise: "));
 
     switch(option) {
         case 1:
-            console.log("welcome to ClinicData")
-            clinicData.insertPatientData();
+           
+            clinicData.insertPatientDetails();
             break;
         case 2:
-            console.log(clinicData.readPatientData());
+            console.log(clinicData.readPatientDetails());
             break;
         case 3:
-            clinicData.editPatientData();
+            clinicData.editPatientDetails();
             break;
         case 4:
-            clinicData.deletePatientData();
+            clinicData.deletePatientDetails();
             break;
         case 5:
+            clinicData.searchPatientDetails();
+            break;
+        case 6:
             flag = false;
             console.log("Exit From ClinicDataManagement")
             break;

@@ -23,7 +23,7 @@ function writeFileData(myObject) {
 class ClinicData {
 
     // insert Patient Details is in ClinicData Book
-    insertPatientData() {
+    insertPatientDetails() {
         // Ability to add values to the ClinicData
         // var patientData = new PatientInformation();
         // var pattern = new Regpattern();
@@ -67,17 +67,18 @@ class ClinicData {
     }
 
     // Read Patient Details from Clinic Data Book
-    readPatientData() {
-        // console.log(patientList);
-        return patientList;
+    readPatientDetails() {
+        let myJson = readFileData();
+        return myJson;
     }
 
      // Edit Details is in CliniData Book
-     editPatientData() {
+     editPatientDetails() {
         let edit = read.question("Enter the Name Of The Patient would be Update: ");
         console.log(edit);
         // let contactToBeUpdated = contactList.findIndex(x => x.firstName == updateContact);
-        let option = (parseInt)(read.question("Pleaze Enter \n 1.PateintName \n 2.BloodGroup \n 3.City \n 4.State \n 5.PatientID \n 6.PhoneNumber\n Enter Your Option: "));
+        let myJson = readFileData();
+        let option = (parseInt)(read.question("Pleaze Enter \n 1.PateintName \n 2.BloodGroup \n 3.City \n 4.State \n 5.PatientID \n 6.PhoneNumber\n 7.Email\n 8.Weigth\n 9.BloodGroup\n 10.Gender\n Enter Your Option: "));
 
         switch (option) {
             case 1:
@@ -87,44 +88,69 @@ class ClinicData {
                 //  console.log(updateContacts);
                 let pName = read.question("Enter the Name Of The Patient: ");
                 let updatePName = read.question("plz enter the new Pateint Name to be Change: ");
-                let PNameToBeUpdated = patientList.findIndex(x => x.patientName == pName)
-                patientList[PNameToBeUpdated].patientName = updatePName;
+                let PNameToBeUpdated = myJson.findIndex(x => x.patientName == pName)
+                myJson[PNameToBeUpdated].patientName = updatePName;
                 break;
             case 2:
                 let bGroup = read.question("Enter the Blood Group Of The Patient: ");
                 let updateBGroup = read.question("plz enter the new Last Name to be change: ");
-                let bGroupToBeUpdated = patientList.findIndex(x => x.bloodGroup == bGroup)
-                patientList[bGroupToBeUpdated].bloodGroup = updateBGroup;
+                let bGroupToBeUpdated = myJson.findIndex(x => x.bloodGroup == bGroup)
+                myJson[bGroupToBeUpdated].bloodGroup = updateBGroup;
                 break;
             case 3:
                 let cityName = read.question("Enter the city Of The Patient: ");
                 let updateCity = read.question("plz enter the new city to be change: ");
-                let cityToBeUpdated = patientList.findIndex(x => x.city == cityName)
-                patientList[cityToBeUpdated].city = updateCity;
+                let cityToBeUpdated = myJson.findIndex(x => x.city == cityName)
+                myJson[cityToBeUpdated].city = updateCity;
                 break;
             case 4:
                 let stateName = read.question("Enter the state Of The Pateint: ");
                 let updateState = read.question("plz enter the new state to be change: ");
-                let stateToBeUpdated = patientList.findIndex(x => x.state == stateName)
-                patientList[stateToBeUpdated].state = updateState;
+                let stateToBeUpdated = myJson.findIndex(x => x.state == stateName)
+                myJson[stateToBeUpdated].state = updateState;
                 break;
             case 5:
                 let pId = read.question("Enter the ID Of The Patient: ");
                 let newPId = read.question("plz enter the new PatientID to be change: ");
-                let pIdToBeUpdated = patientList.findIndex(x => x.patientId == pId)
-                patientList[pIdToBeUpdated].patientId = newPId;
+                let pIdToBeUpdated = myJson.findIndex(x => x.patientId == pId)
+                myJson[pIdToBeUpdated].patientId = newPId;
                 break;
             case 6:
                 let mob = read.question("Enter the PhoneNumber Of The Patient: ");
                 let newMob = read.question("plz enter the new PhoneNumber to be change: ");
-                let mobToBeUpdated = patientList.findIndex(x => x.phoneNumber == mob)
-                patientList[mobToBeUpdated].phoneNumber = newMob;
+                let mobToBeUpdated = myJson.findIndex(x => x.phoneNumber == mob)
+                myJson[mobToBeUpdated].phoneNumber = newMob;
+                break;
+            case 7:
+                let mail = read.question("Enter the Email Of The Patient: ");
+                let newMail = read.question("plz enter the new Email to be change: ");
+                let emailToBeUpdated = myJson.findIndex(x => x.email == mail)
+                myJson[emailToBeUpdated].email = newMail;
+                break;
+            case 8:
+                let weigh = read.question("Enter the Weight Of The Patient: ");
+                let newWeight = read.question("plz enter the new Weight to be change: ");
+                let weightToBeUpdated = myJson.findIndex(x => x.weight == weigh)
+                myJson[weightToBeUpdated].weight = newWeight;
+                break;
+            case 9:
+                let bloodG = read.question("Enter the BloodGroup Of The Patient: ");
+                let newBGroup = read.question("plz enter the new BloodGroup to be change: ");
+                let bloodGroupToBeUpdated = myJson.findIndex(x => x.bloodGroup == bloodG)
+                myJson[bloodGroupToBeUpdated].bloodGroup = newBGroup;
+                break;
+            case 10:
+                let gen = read.question("Enter the Gender Of The Patient: ");
+                let newgen = read.question("plz enter the new Gender to be change: ");
+                let genderToBeUpdated = myJson.findIndex(x => x.gender == gen)
+                myJson[genderToBeUpdated].gender = newgen;
                 break;
         }
+        writeFileData(myJson);
     }
 
     // Delete Patient Details From Clinic Data Book
-    deletePatientData() {
+    deletePatientDetails() {
             // let pName = read.question("Enter the First Name of the Patient : ");
             // patientList.forEach(contact => {
             //     if ((contact.patientName === pName) == true) {
@@ -147,6 +173,34 @@ class ClinicData {
             writeFileData(myJson);
             console.log("PatientDetails is deleted");
         }
+
+         // Search PatientDetails By City or State
+    searchPatientDetails() {
+        let myJson = readFileData();
+        let option = parseInt(read.question("Please Enter\n 1. Search by City\n 2. Search by State\n Enter your choice : "));
+
+        switch (option) {
+            case 1:
+                let city = read.question("Enter the City you want to search the patient for : ");
+                myJson.forEach(contact => {
+                    if (contact.city == city) {
+                        console.log(contact);
+                    }
+                });
+                break;
+            case 2:
+                let state = read.question("Enter the State you want to search the patient for : ");
+                myJson.forEach(contact => {
+                    if (contact.state == state) {
+                        console.log(contact);
+                    }
+                });
+                break;
+            default:
+                console.log("You have entered invalid input!");
+                break;
+        }
+    }
 }
 
 // Exporting CliniData class file is in ClinicDataMain class file
