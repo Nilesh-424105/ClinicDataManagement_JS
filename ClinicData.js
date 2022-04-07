@@ -41,7 +41,7 @@ class ClinicData {
         //     patientData.patientName = pattern.checkRegexForName(read.question("Enter First Name: "));
 
         // }
-         // Ability to add user-defined values to the ClinicData Book
+        // Ability to add user-defined values to the ClinicData Book
         patientData.patientName = read.question("Enter Patient Name: ");
         pattern.checkRegexForName(patientData.patientName);
         patientData.patientId = read.question("Enter Patient Id: ");
@@ -72,8 +72,8 @@ class ClinicData {
         return myJson;
     }
 
-     // Edit Details is in CliniData Book
-     editPatientDetails() {
+    // Edit Details is in CliniData Book
+    editPatientDetails() {
         let edit = read.question("Enter the Name Of The Patient would be Update: ");
         console.log(edit);
         // let contactToBeUpdated = contactList.findIndex(x => x.firstName == updateContact);
@@ -151,30 +151,30 @@ class ClinicData {
 
     // Delete Patient Details From Clinic Data Book
     deletePatientDetails() {
-            // let pName = read.question("Enter the First Name of the Patient : ");
-            // patientList.forEach(contact => {
-            //     if ((contact.patientName === pName) == true) {
-            //         let index = patientList.indexOf(pName);
-            //         patientList.splice(index, 1);
-            //         console.log("PatientDetails is deleted");
-            //     }
-            //     else {
-            //         console.log("No PatientDetails present with this name!");
-            //     }
-            // });
-            // return patientList;
-            let pName = read.question("Enter the First Name of the Pateint : ");
-            let myJson = readFileData();
-            for (let index = 0; index < myJson.length; index++) {
-                if ((myJson[index].patientName == pName)) {
-                    myJson.splice(index, 1);
-                }
+        // let pName = read.question("Enter the First Name of the Patient : ");
+        // patientList.forEach(contact => {
+        //     if ((contact.patientName === pName) == true) {
+        //         let index = patientList.indexOf(pName);
+        //         patientList.splice(index, 1);
+        //         console.log("PatientDetails is deleted");
+        //     }
+        //     else {
+        //         console.log("No PatientDetails present with this name!");
+        //     }
+        // });
+        // return patientList;
+        let pName = read.question("Enter the First Name of the Pateint : ");
+        let myJson = readFileData();
+        for (let index = 0; index < myJson.length; index++) {
+            if ((myJson[index].patientName == pName)) {
+                myJson.splice(index, 1);
             }
-            writeFileData(myJson);
-            console.log("PatientDetails is deleted");
         }
+        writeFileData(myJson);
+        console.log("PatientDetails is deleted");
+    }
 
-         // Search PatientDetails By City or State
+    // Search PatientDetails By City or State
     searchPatientDetails() {
         let myJson = readFileData();
         let option = parseInt(read.question("Please Enter\n 1. Search by City\n 2. Search by State\n Enter your choice : "));

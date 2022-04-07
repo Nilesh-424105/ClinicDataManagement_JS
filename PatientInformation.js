@@ -14,9 +14,9 @@ class PatientInformation {
     bloodGroup;
 
 
-    
 
-   // patientName, patientId, address, city, state, weight, phoneNumber, email, gender, bloodGroup
+
+    // patientName, patientId, address, city, state, weight, phoneNumber, email, gender, bloodGroup
     // constructor
     constructor(patientName, patientId, address, city, state, weight, phoneNumber, email, gender, bloodGroup) {
         this.patientName = patientName;
@@ -35,86 +35,86 @@ class PatientInformation {
     getpatientName() {
         return this._patientName;
     }
-    
+
     setpatientName(patientName) {
-         this._patientName = patientName;
+        this._patientName = patientName;
     }
 
     get patientId() {
         return this._patientId;
     }
     set patientId(patientId) {
-            this._patientId = patientId;
+        this._patientId = patientId;
     }
 
     get address() {
         return this._address;
     }
-    
+
     set address(address) {
-            this._address = address;
+        this._address = address;
     }
 
     get city() {
         return this._city;
     }
-    
+
     set city(city) {
-            this._city = city;
+        this._city = city;
     }
 
     get state() {
         return this._state;
     }
-    
+
     set state(state) {
-            this._state = state;
+        this._state = state;
     }
 
     get weight() {
         return this._weight;
     }
-    
+
     set weight(weight) {
-            this._weight = weight;
+        this._weight = weight;
     }
 
 
     get phoneNumber() {
         return this._phoneNumber;
     }
-    
+
     set phoneNumber(phoneNumber) {
-            this._phoneNumber = phoneNumber;
+        this._phoneNumber = phoneNumber;
     }
 
 
     get email() {
         return this._email;
     }
-    
+
     set email(email) {
-            this.email = email;
+        this.email = email;
     }
 
 
     get gender() {
         return this._gender;
     }
-    
+
     set gender(gender) {
-            this._gender = gender;
+        this._gender = gender;
     }
 
     get bloodGroup() {
         return this._bloodGroup;
     }
-    
+
     set bloodGroup(bloodGroup) {
-            this._bloodGroup = bloodGroup;
+        this._bloodGroup = bloodGroup;
     }
 
-    
+
     // tostring
     toString() {
         return "patientName=" + this.patientName

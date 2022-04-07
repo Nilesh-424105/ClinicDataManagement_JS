@@ -14,9 +14,9 @@ while (flag) {
     console.log("6. to exit");
     let option = parseInt(read.question("Enter your choise: "));
 
-    switch(option) {
+    switch (option) {
         case 1:
-           
+
             clinicData.insertPatientDetails();
             break;
         case 2:
