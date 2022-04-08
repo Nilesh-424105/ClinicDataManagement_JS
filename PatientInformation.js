@@ -32,7 +32,6 @@ class PatientInformation {
     getpatientName() {
         return this._patientName;
     }
-
     setpatientName(patientName) {
         this._patientName = patientName;
     }
@@ -47,7 +46,6 @@ class PatientInformation {
     get address() {
         return this._address;
     }
-
     set address(address) {
         this._address = address;
     }
@@ -55,7 +53,6 @@ class PatientInformation {
     get city() {
         return this._city;
     }
-
     set city(city) {
         this._city = city;
     }
@@ -63,7 +60,6 @@ class PatientInformation {
     get state() {
         return this._state;
     }
-
     set state(state) {
         this._state = state;
     }
@@ -71,34 +67,27 @@ class PatientInformation {
     get weight() {
         return this._weight;
     }
-
     set weight(weight) {
         this._weight = weight;
     }
 
-
     get phoneNumber() {
         return this._phoneNumber;
     }
-
     set phoneNumber(phoneNumber) {
         this._phoneNumber = phoneNumber;
     }
 
-
     get email() {
         return this._email;
     }
-
     set email(email) {
         this.email = email;
     }
 
-
     get gender() {
         return this._gender;
     }
-
     set gender(gender) {
         this._gender = gender;
     }
@@ -106,7 +95,6 @@ class PatientInformation {
     get bloodGroup() {
         return this._bloodGroup;
     }
-
     set bloodGroup(bloodGroup) {
         this._bloodGroup = bloodGroup;
     }

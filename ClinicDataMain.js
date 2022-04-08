@@ -8,7 +8,7 @@ flag = true;
 while (flag) {
     console.log("welcome to ClinicDataManagement Program")
     console.log("1. Insert Patient Data in Clinic Book");
-    console.log("2. Display the list of Patient");
+    console.log("2. Display the list of Patients and Number of Patients");
     console.log("3. Edit Patient Data in Clinic Book");
     console.log("4. Delete Patient Data in Clinic Book");
     console.log("5. Search Patient Data in Clinic Book");
@@ -20,7 +20,7 @@ while (flag) {
             clinicData.insertPatientDetails();
             break;
         case 2:
-            console.log(clinicData.readPatientDetails());
+            clinicData.readPatientDetails();
             break;
         case 3:
             clinicData.editPatientDetails();

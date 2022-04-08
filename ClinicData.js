@@ -37,34 +37,42 @@ class ClinicData {
         //     patientData.patientName = pattern.checkRegexForName(read.question("Enter First Name: "));
         // }
         // Ability to add user-defined values to the ClinicData Book
-        patientData.patientName = read.question("Enter Patient Name: ");
-        pattern.checkRegexForName(patientData.patientName);
-        patientData.patientId = read.question("Enter Patient Id: ");
-        pattern.checkRegexForPatientID(patientData.patientId);
-        patientData.address = read.question("Enter address: ");
-        patientData.city = read.question("Enter City: ");
-        pattern.checkRegexForName(patientData.city);
-        patientData.state = read.question("Enter State: ");
-        pattern.checkRegexForName(patientData.state);
-        patientData.weight = read.question("Enter weight: ");
-        patientData.phoneNumber = read.question("Enter PhoneNumber: ");
-        pattern.checkRegexForMobile(patientData.phoneNumber);
-        patientData.email = read.question("Enter Email: ");
-        pattern.checkRegexForEmail(patientData.email);
-        patientData.gender = read.question("Enter Gender: ");
-        patientData.bloodGroup = read.question("Enter bloodGroup: ");
-        // console.log(patientData.toString());
-        patientList.push(patientData);
-        let myJson = readFileData();
-        myJson.push(patientData);
-        writeFileData(myJson);
-        return patientList;
+        try {
+            patientData.patientName = read.question("Enter Patient Name: ");
+            pattern.checkRegexForName(patientData.patientName);
+            patientData.patientId = read.question("Enter Patient Id: ");
+            pattern.checkRegexForPatientID(patientData.patientId);
+            patientData.address = read.question("Enter address: ");
+            patientData.city = read.question("Enter City: ");
+            pattern.checkRegexForName(patientData.city);
+            patientData.state = read.question("Enter State: ");
+            pattern.checkRegexForName(patientData.state);
+            patientData.weight = read.question("Enter weight: ");
+            patientData.phoneNumber = read.question("Enter PhoneNumber: ");
+            pattern.checkRegexForMobile(patientData.phoneNumber);
+            patientData.email = read.question("Enter Email: ");
+            pattern.checkRegexForEmail(patientData.email);
+            patientData.gender = read.question("Enter Gender: ");
+            patientData.bloodGroup = read.question("Enter bloodGroup: ");
+            patientList.push(patientData);
+            let myJson = readFileData();
+            myJson.push(patientData);
+            writeFileData(myJson);
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     // Read Patient Details from Clinic Data Book
     readPatientDetails() {
+        let count = 0;
         let myJson = readFileData();
-        return myJson;
+        myJson.forEach(contact => {
+            count++;
+        });
+        console.log(myJson)
+        console.log("Number of Patients in Clinical Data is: ", count);
+        // return myJson;
     }
 
     // Edit Details is in CliniData Book
@@ -166,13 +174,14 @@ class ClinicData {
             }
         }
         writeFileData(myJson);
-        console.log("PatientDetails is deleted");
+        console.log("PatientDetails Object is deleted");
     }
 
     // Search PatientDetails By City or State
     searchPatientDetails() {
         let myJson = readFileData();
         let option = parseInt(read.question("Please Enter\n 1. Search by City\n 2. Search by State\n Enter your choice : "));
+        let count = 0;
 
         switch (option) {
             case 1:
@@ -180,16 +189,20 @@ class ClinicData {
                 myJson.forEach(contact => {
                     if (contact.city == city) {
                         console.log(contact);
+                        count++;
                     }
                 });
+                console.log("Number of Patients By Same City is: ", count);
                 break;
             case 2:
                 let state = read.question("Enter the State you want to search the patient for : ");
                 myJson.forEach(contact => {
                     if (contact.state == state) {
                         console.log(contact);
+                        count++;
                     }
                 });
+                console.log("Number of Patients By Same State is: ", count);
                 break;
             default:
                 console.log("You have entered invalid input!");
