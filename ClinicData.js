@@ -13,7 +13,7 @@ function readFileData() {
     return myObject;
 }
 
-// Write Details in Address.json file
+// Write Details in Clinic.json file
 function writeFileData(myObject) {
     let writeData = JSON.stringify(myObject);
     return fs.writeFileSync('./Clinic.json', writeData);
@@ -23,19 +23,7 @@ class ClinicData {
 
     // insert Patient Details is in ClinicData Book
     insertPatientDetails() {
-        // Ability to add values to the ClinicData
-        // var patientData = new PatientInformation();
-        // var pattern = new Regpattern();
-
-        // Ability to add user-defined values to the ClinicData
-        // patientData.patientName = pattern.checkRegexForName(read.question("Enter First Name: "));
-        // if(((patientData.patientName=(pattern.checkRegexForName(read.question("Enter First Name: ")) != true)))){
-        //      pattern.checkRegexForName(read.question("Enter First Name: "));
-        // }
-        // else{
-        //     console.log("Pleaze Enter First Name Again")
-        //     patientData.patientName = pattern.checkRegexForName(read.question("Enter First Name: "));
-        // }
+        
         // Ability to add user-defined values to the ClinicData Book
         try {
             patientData.patientName = read.question("Enter Patient Name: ");
@@ -79,16 +67,11 @@ class ClinicData {
     editPatientDetails() {
         let edit = read.question("Enter the Name Of The Patient would be Update: ");
         console.log(edit);
-        // let contactToBeUpdated = contactList.findIndex(x => x.firstName == updateContact);
         let myJson = readFileData();
         let option = (parseInt)(read.question("Pleaze Enter \n 1.PateintName \n 2.BloodGroup \n 3.City \n 4.State \n 5.PatientID \n 6.PhoneNumber\n 7.Email\n 8.Weigth\n 9.BloodGroup\n 10.Gender\n Enter Your Option: "));
 
         switch (option) {
             case 1:
-                //  let contactToBeUpdated = contactList.find(x => x.setfirstName() == updateContact);
-                // let updateContacts = read.question("plz enter the new name to change: ");
-                //  contactToBeUpdated.firstName;
-                //  console.log(updateContacts);
                 let pName = read.question("Enter the Name Of The Patient: ");
                 let updatePName = read.question("plz enter the new Pateint Name to be Change: ");
                 let PNameToBeUpdated = myJson.findIndex(x => x.patientName == pName)
